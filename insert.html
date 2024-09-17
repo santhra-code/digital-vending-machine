@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Card</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Insert Menstrual Debit Card</h1>
+        <p>Please insert your Menstrual Debit Card to proceed with the payment.</p>
+        <button class="checkout-btn" onclick="insertCard()">Insert Card</button>
+    </div>
+
+    <script>
+        function insertCard() {
+            // Simulate card insertion with a delay
+            setTimeout(function() {
+                // Redirect to the processing page
+                window.location.href = 'processing.html';
+            }, 2000); // 2 seconds delay to simulate card processing
+        }
+    </script>
+</body>
+</html>

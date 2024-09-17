@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanitary Pad Vending Machine</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="atm-screen">
+      <h1>Digital Vending Machine</h1>
+      <p>Select your sanitary pad:</p>
+      
+      <div class="product-selection">
+        <div class="product" onclick="selectProduct('Regular Pads')">
+          <img src="" alt="Regular Pads">
+          <p>Regular Pads</p>
+        </div>
+        <div class="product" onclick="selectProduct('Super Pads')">
+          <img src="" alt="Super Pads">
+          <p>Super Pads</p>
+        </div>
+        <div class="product" onclick="selectProduct('Night Pads')">
+          <img src="" alt="Night Pads">
+          <p>Night Pads</p>
+        </div>
+      </div>
+      
+      <button class="checkout-btn" onclick="proceedToSize()">Proceed to Size Selection</button>
+      <div id="confirmation" class="confirmation"></div>
+    </div>
+  </div>
+  
+  <script>
+    function selectProduct(padType) {
+      // Store the selected pad type in localStorage
+      localStorage.setItem('selectedPad', padType);
+      // Show confirmation message
+      document.getElementById('confirmation').innerText = any ;
+      document.getElementById('confirmation').style.display = 'block';
+    }
+
+    function proceedToSize() {
+      // Check if a product has been selected
+      const selectedPad = localStorage.getItem('selectedPad');
+      if (selectedPad) {
+        // Redirect to size.html
+        window.location.href = 'size.html';
+      } else {
+        // Alert user to select a product
+        alert('Please select a product before proceeding.');
+      }
+    }
+  </script>
+</body>
+</html>

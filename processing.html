@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processing</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Please Wait...</h1>
+        <p>Your payment is being processed. This may take a few moments.</p>
+    </div>
+
+    <script>
+        // Simulate a delay for processing
+        setTimeout(function() {
+            // Redirect to the success page after processing
+            window.location.href = 'success.html';
+        }, 3000); // 3 seconds delay to simulate processing
+    </script>
+</body>
+</html>

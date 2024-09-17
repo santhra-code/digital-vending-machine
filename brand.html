@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Pad Brand</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Select Pad Brand:</h1>
+        <form id="brandForm">
+            <label>
+                <input type="radio" name="brand" value="BrandA"> StayFree
+            </label><br>
+            <label>
+                <input type="radio" name="brand" value="BrandB"> Whisper
+            </label><br>
+            <label>
+                <input type="radio" name="brand" value="BrandC"> Femi9
+            </label><br>
+            <label>
+                <input type="radio" name="brand" value="BrandD"> Sofy
+            </label><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('brandForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const selectedBrand = document.querySelector('input[name="brand"]:checked');
+            if (selectedBrand) {
+                localStorage.setItem('selectedBrand', selectedBrand.value);
+                // Redirect to the final step (payment or confirmation page)
+                window.location.href = 'insert.html'; // Change this if the next step is different
+            } else {
+                alert('Please select a brand.');
+            }
+        });
+    </script>
+</body>
+</html>

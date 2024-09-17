@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Pad Size</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Select the size of the pad:</h1>
+        <form id="sizeForm">
+            <label>
+                <input type="radio" name="size" value="small"> Small
+            </label><br>
+            <label>
+                <input type="radio" name="size" value="medium"> Medium
+            </label><br>
+            <label>
+                <input type="radio" name="size" value="large"> Large
+            </label><br><br>
+            <input type="submit" value="Next">
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('sizeForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const size = document.querySelector('input[name="size"]:checked');
+            if (size) {
+                localStorage.setItem('padSize', size.value);
+                window.location.href = 'wings.html';
+            } else {
+                alert('Please select a pad size.');
+            }
+        });
+    </script>
+</body>
+</html>
